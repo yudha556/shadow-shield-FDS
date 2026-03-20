@@ -51,7 +51,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: (
         <LucideLayoutDashboard 
         />
@@ -74,7 +74,7 @@ const data = {
     },
     {
       title: "Live Feed",
-      url: "#",
+      url: "/transaction",
       icon: (
         <Activity
         />
@@ -96,7 +96,7 @@ const data = {
     },
     {
       title: "Alert Queue",
-      url: "#",
+      url: "/alert",
       icon: (
         <AlertTriangle
         />
@@ -124,7 +124,7 @@ const data = {
   projects: [
     {
       name: "Trace Graph",
-      url: "#",
+      url: "/graph",
       icon: (
         <GitFork
         />
@@ -132,7 +132,7 @@ const data = {
     },
     {
       name: "Police Engine",
-      url: "#",
+      url: "/policy",
       icon: (
         <BrainCircuit
         />
@@ -140,7 +140,7 @@ const data = {
     },
     {
       name: "Analytics",
-      url: "#",
+      url: "/analytics",
       icon: (
         <ChartPie
         />
