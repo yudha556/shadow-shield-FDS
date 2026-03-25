@@ -1,4 +1,4 @@
-import { AlertItem } from "./alert-card";
+import { AlertItem } from "../components/alert-card";
 
 export const DUMMY_ALERTS: AlertItem[] = [
   {
