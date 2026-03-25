@@ -21,7 +21,7 @@ export default function AnalyticPage() {
   const [activeRange, setActiveRange] = useState<string>("7d");
 
   return (
-    <div className="min-h-screen bg-background p-6 space-y-5">
+    <div className="min-h-screen bg-background space-y-5">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold text-foreground tracking-tight">
