@@ -35,7 +35,6 @@ import { Download, Filter, CalendarDays, ShieldAlert, ChevronDown } from "lucide
 import { transactions } from "@/lib/dummy-transactions"
 import type { Transaction, Status } from "@/types/transaction"
 
-// --- Helpers ---
 function getRiskColor(score: number) {
   if (score >= 75) return "text-red-400"
   if (score >= 40) return "text-amber-400"
