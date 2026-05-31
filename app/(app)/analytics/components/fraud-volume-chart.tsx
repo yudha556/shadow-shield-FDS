@@ -13,7 +13,6 @@ import {
     Cell,
 } from "recharts";
 import { Download } from "lucide-react";
-import { TooltipProps } from "recharts";
 
 const data = [
     { time: "00:00", value: 28 },
@@ -30,14 +29,22 @@ const data = [
     { time: "22:00", value: 35 },
 ];
 
+type RechartPayloadItem = {
+    value?: number;
+};
+
+type RechartTooltipProps = {
+    active?: boolean;
+    payload?: RechartPayloadItem[];
+    label?: string | number;
+};
+
 const CustomTooltip = ({
     active,
     payload,
     label,
-}: TooltipProps<number, string>) => {
+}: RechartTooltipProps) => {
     if (active && payload && payload.length) {
-        const value = payload[0]?.value ?? 0;
-
         return (
             <div className="bg-popover border border-border/60 rounded-lg px-3 py-2 shadow-xl text-xs">
                 <p className="text-muted-foreground">{String(label)}</p>

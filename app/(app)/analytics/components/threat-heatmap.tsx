@@ -2,7 +2,15 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
+import type { ComponentType } from "react";
 import "leaflet/dist/leaflet.css"; 
+
+type LooseLeafletComponent = ComponentType<Record<string, unknown>>;
+
+const LeafletMapContainer = MapContainer as unknown as LooseLeafletComponent;
+const LeafletTileLayer = TileLayer as unknown as LooseLeafletComponent;
+const LeafletCircleMarker = CircleMarker as unknown as LooseLeafletComponent;
+const LeafletTooltip = Tooltip as unknown as LooseLeafletComponent;
 
 type Region = {
     label: string;
@@ -66,7 +74,7 @@ export function ThreatHeatmap() {
                         className="relative w-full h-[300px] rounded-lg overflow-hidden border border-border/30 shadow-inner"
                         style={{ backgroundColor: "#242424" }} 
                     >                    
-                        <MapContainer
+                        <LeafletMapContainer
                             center={[30, 0]}
                             zoom={0}
                             zoomSnap={0.5}
@@ -96,13 +104,13 @@ export function ThreatHeatmap() {
                             attributionControl={false}
                             style={{ height: "100%", width: "100%", background: 'transparent' }} 
                         >
-                            <TileLayer 
+                            <LeafletTileLayer 
                                 url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" 
                                 noWrap={true}
                             />
 
                             {regions.map((r) => (
-                                <CircleMarker
+                                <LeafletCircleMarker
                                     key={r.label}
                                     center={[r.lat, r.lng]}
                                     radius={4} 
@@ -114,7 +122,7 @@ export function ThreatHeatmap() {
                                         className: 'blinking-marker' 
                                     }}
                                 >
-                                    <Tooltip
+                                    <LeafletTooltip
                                         direction="top"
                                         offset={[0, -5]}
                                         opacity={1}
@@ -127,10 +135,10 @@ export function ThreatHeatmap() {
                                                 Risiko: <span className="capitalize font-medium text-white/90">{r.level}</span>
                                             </span>
                                         </div>
-                                    </Tooltip>
-                                </CircleMarker>
+                                    </LeafletTooltip>
+                                </LeafletCircleMarker>
                             ))}
-                        </MapContainer>
+                        </LeafletMapContainer>
 
                         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#242424]/90 to-transparent" />
                     </div>
