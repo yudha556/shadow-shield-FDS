@@ -49,7 +49,7 @@ export default function AppLayout({
             </div>
 
             <div className="flex flex-row justify-between items-center w-full px-6">
-              <Input placeholder="Search TX hash, wallet address, or alert ID.." className="max-w-md -ml-4" />
+              <Input placeholder="Cari ID transaksi, rekening, wallet, atau alert..." className="max-w-md -ml-4" />
               <div className="flex flex-row gap-4 items-center">
                 <Button variant={"outline"} size={'lg'} className="cursor-pointer"><Bell /></Button>
                 <Avatar>

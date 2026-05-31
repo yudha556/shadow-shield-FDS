@@ -15,9 +15,9 @@ export default function AlertPage() {
     <div className="flex flex-col gap-5  w-full mx-auto">
       <div className="flex items-start justify-between">
       <div>
-        <h1 className="text-xl font-bold text-foreground tracking-tight">Alerts Queue</h1>
+        <h1 className="text-xl font-bold text-foreground tracking-tight">Antrean Alert</h1>
         <p className="text-sm text-muted-foreground mt-0.5">
-          Manage and resolve detected anomalies and blocked transactions
+          Kelola dan tindaklanjuti anomali terdeteksi serta transaksi yang diblokir
         </p>
       </div>
 
@@ -27,7 +27,7 @@ export default function AlertPage() {
         className="gap-2 border-border/60 text-muted-foreground hover:text-foreground hover:bg-secondary/60 text-xs"
       >
         <SlidersHorizontal className="w-3.5 h-3.5" />
-        Advanced Filters
+        Filter Lanjutan
       </Button>
     </div>
 

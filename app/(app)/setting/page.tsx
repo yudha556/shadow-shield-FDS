@@ -12,11 +12,11 @@ export default function Setting() {
       
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <h1 className="text-2xl font-bold text-foreground tracking-tight">
-          System Settings
+          Pengaturan Sistem
         </h1>
         <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold">
           <Save className="mr-2 h-4 w-4" />
-          Save Changes
+          Simpan Perubahan
         </Button>
       </div>
 

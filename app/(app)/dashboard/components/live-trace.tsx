@@ -7,12 +7,20 @@ import {
   Handle, 
   Position, 
   Edge, 
-  Node, 
-  MarkerType 
+  Node
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
-function CustomTraceNode({ data }: { data: any }) {
+interface TraceNodeData {
+  label: string;
+  subLabel?: string;
+  color: string;
+  size?: "small";
+  textClass?: string;
+  labelTop?: boolean;
+}
+
+function CustomTraceNode({ data }: { data: TraceNodeData }) {
   const borderColors: Record<string, string> = {
     cyan: "border-cyan-500",
     orange: "border-orange-500",
@@ -61,31 +69,31 @@ const initialNodes: Node[] = [
     id: 'sender', 
     position: { x: 0, y: 70 }, 
     type: 'customTrace',
-    data: { label: 'Sender', subLabel: '0xBA2...', color: 'cyan', size: 'small' } 
+    data: { label: 'Bank Jambi', subLabel: 'rekening asal', color: 'cyan', size: 'small' } 
   },
   { 
     id: 'mixer', 
     position: { x: 180, y: 70 }, 
     type: 'customTrace',
-    data: { label: 'Mixer Contract', color: 'orange', textClass: 'text-orange-500 font-bold' } 
+    data: { label: 'VA Pintu', color: 'orange', textClass: 'text-orange-500 font-bold' } 
   },
   { 
     id: 'flagged', 
     position: { x: 380, y: 20 }, 
     type: 'customTrace',
-    data: { label: 'Flagged Wallet', color: 'red' } 
+    data: { label: 'Wallet Ditandai', color: 'red' } 
   },
   { 
     id: 'darknet', 
     position: { x: 580, y: 20 }, 
     type: 'customTrace',
-    data: { label: 'Darknet Market', color: 'red', textClass: 'text-red-500 font-bold', labelTop: true } 
+    data: { label: 'Tornado Cash', color: 'red', textClass: 'text-red-500 font-bold', labelTop: true } 
   },
   { 
     id: 'unknown', 
     position: { x: 380, y: 120 }, 
     type: 'customTrace',
-    data: { label: 'Unknown', color: 'muted', size: 'small' } 
+    data: { label: 'Belum jelas', color: 'muted', size: 'small' } 
   },
 ];
 
@@ -130,7 +138,7 @@ export function LiveTrace() {
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-semibold flex items-center gap-2">
           <GitCommit className="h-4 w-4 text-cyan-500" />
-          Live Trace Route: TX-992A
+          Rute Jejak Live: TX-992A
         </CardTitle>
       </CardHeader>
       

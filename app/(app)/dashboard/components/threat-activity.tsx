@@ -26,10 +26,16 @@ const data = [
   { time: "13:00", value: 120 },
 ];
 
-const CustomDot = (props: any) => {
+interface CustomDotProps {
+  cx?: number;
+  cy?: number;
+  payload?: { isAnomaly?: boolean };
+}
+
+const CustomDot = (props: CustomDotProps) => {
   const { cx, cy, payload } = props;
 
-  if (payload.isAnomaly) {
+  if (payload?.isAnomaly && cx !== undefined && cy !== undefined) {
     return (
       <g>
         <circle 
@@ -42,7 +48,7 @@ const CustomDot = (props: any) => {
           fill="#ef4444" fontSize={10} fontWeight="bold" 
           textAnchor="middle" className="tracking-wider"
         >
-          ANOMALY
+          ANOMALI
         </text>
       </g>
     );
@@ -50,13 +56,19 @@ const CustomDot = (props: any) => {
   return null;
 };
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: Array<{ value: number }>;
+  label?: string;
+}
+
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-background/95 border border-border/60 p-3 rounded-lg shadow-xl">
         <p className="text-xs text-muted-foreground mb-1">{label}</p>
         <p className="text-sm font-bold text-cyan-500">
-          Threat Level: {payload[0].value}
+          Level Ancaman: {payload[0].value}
         </p>
       </div>
     );
@@ -70,7 +82,7 @@ export function ThreatActivity() {
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-semibold flex items-center gap-2">
           <Activity className="h-4 w-4 text-cyan-500" />
-          Real-time Threat Activity
+          Aktivitas Ancaman Real-time
         </CardTitle>
       </CardHeader>
       

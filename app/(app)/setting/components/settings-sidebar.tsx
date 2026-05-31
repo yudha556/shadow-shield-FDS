@@ -3,11 +3,11 @@ import { SlidersHorizontal, Webhook, Bell, Users, ShieldCheck } from "lucide-rea
 
 export function SettingsSidebar() {
   const navItems = [
-    { icon: SlidersHorizontal, label: "Risk Thresholds", active: true },
-    { icon: Webhook, label: "API & Integrations", active: false },
-    { icon: Bell, label: "Notifications", active: false },
-    { icon: Users, label: "Team Management", active: false },
-    { icon: ShieldCheck, label: "Security & Audit", active: false },
+    { icon: SlidersHorizontal, label: "Ambang Risiko", active: true },
+    { icon: Webhook, label: "API & Integrasi", active: false },
+    { icon: Bell, label: "Notifikasi", active: false },
+    { icon: Users, label: "Manajemen Tim", active: false },
+    { icon: ShieldCheck, label: "Keamanan & Audit", active: false },
   ];
 
   return (

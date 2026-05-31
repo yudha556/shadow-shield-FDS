@@ -13,7 +13,7 @@ export default function DashboardPage() {
         Security Operations Center
       </h1>
       <p className="text-sm text-muted-foreground mt-1">
-        Real-time AI Fraud Detection & Network Intelligence
+        Deteksi fraud AI real-time dan intel jaringan
       </p>
     </div>
       <StatCards />

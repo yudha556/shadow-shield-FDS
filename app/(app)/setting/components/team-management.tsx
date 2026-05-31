@@ -6,30 +6,30 @@ import { MoreVertical, UserPlus } from "lucide-react";
 
 export function TeamManagement() {
   const team = [
-    { name: "Sarah Jenkins", email: "sarah.j@shadowshield.io", role: "Administrator", roleColor: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20", status: "Active", login: "Online", avatar: "SJ" },
-    { name: "Marcus Chen", email: "m.chen@shadowshield.io", role: "SOC Analyst", roleColor: "text-foreground bg-background border-border", status: "Active", login: "2 hours ago", avatar: "MC" },
-    { name: "Elena Rostova", email: "elena.r@shadowshield.io", role: "Investigator", roleColor: "text-foreground bg-background border-border", status: "Away", login: "Yesterday", avatar: "ER" },
+    { name: "Sarah Jenkins", email: "sarah.j@shadowshield.io", role: "Administrator", roleColor: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20", status: "Aktif", login: "Online", avatar: "SJ" },
+    { name: "Marcus Chen", email: "m.chen@shadowshield.io", role: "Analis SOC", roleColor: "text-foreground bg-background border-border", status: "Aktif", login: "2 jam lalu", avatar: "MC" },
+    { name: "Elena Rostova", email: "elena.r@shadowshield.io", role: "Investigator", roleColor: "text-foreground bg-background border-border", status: "Away", login: "Kemarin", avatar: "ER" },
   ];
 
   return (
     <Card className="bg-card border-border/60">
       <CardHeader className="flex flex-row items-center justify-between">
         <div className="space-y-1">
-          <CardTitle className="text-base font-semibold">Team Management</CardTitle>
-          <p className="text-xs text-muted-foreground">Manage platform access for analysts, investigators, and administrators.</p>
+          <CardTitle className="text-base font-semibold">Manajemen Tim</CardTitle>
+          <p className="text-xs text-muted-foreground">Kelola akses platform untuk analis, investigator, dan administrator.</p>
         </div>
         <Button size="sm" className="h-8 text-xs font-semibold bg-cyan-500 hover:bg-cyan-600 text-black">
-          <UserPlus className="mr-2 h-3 w-3" /> Invite Member
+          <UserPlus className="mr-2 h-3 w-3" /> Undang Anggota
         </Button>
       </CardHeader>
       <CardContent>
         
         <div className="w-full overflow-x-auto">
           <div className="min-w-[600px] grid grid-cols-12 gap-4 pb-4 border-b border-border/50 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-            <div className="col-span-5">User Name</div>
-            <div className="col-span-3">Role Level</div>
-            <div className="col-span-2">Account Status</div>
-            <div className="col-span-2 text-right pr-6">Last Login</div>
+            <div className="col-span-5">Nama User</div>
+            <div className="col-span-3">Level Role</div>
+            <div className="col-span-2">Status Akun</div>
+            <div className="col-span-2 text-right pr-6">Login Terakhir</div>
           </div>
 
           <div className="min-w-[600px] divide-y divide-border/50">
@@ -53,7 +53,7 @@ export function TeamManagement() {
                 </div>
 
                 <div className="col-span-2">
-                  <span className={`text-xs font-medium ${member.status === "Active" ? "text-emerald-500" : "text-muted-foreground"}`}>
+                  <span className={`text-xs font-medium ${member.status === "Aktif" ? "text-emerald-500" : "text-muted-foreground"}`}>
                     {member.status}
                   </span>
                 </div>

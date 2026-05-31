@@ -42,7 +42,7 @@ export function AuditLog({ entries }: AuditLogProps) {
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-semibold flex items-center gap-2 text-primary">
           <ScrollText className="w-4 h-4 " />
-          Audit Log &amp; Timeline
+          Log Audit &amp; Timeline
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">

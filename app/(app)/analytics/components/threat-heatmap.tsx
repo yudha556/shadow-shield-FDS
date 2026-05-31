@@ -57,7 +57,7 @@ export function ThreatHeatmap() {
             <Card className="bg-card border-border/60 shadow-lg">
                 <CardHeader className="pb-2 pt-5 px-5">
                     <CardTitle className="text-sm font-semibold text-foreground tracking-tight">
-                        Global Threat Heatmap
+                        Peta Panas Ancaman Global
                     </CardTitle>
                 </CardHeader>
 
@@ -124,7 +124,7 @@ export function ThreatHeatmap() {
                                             <span className="font-semibold">{r.label}</span>
                                             <span className="text-[10px] opacity-80 flex items-center gap-1">
                                                 <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: colors[r.level] }}></span>
-                                                Risk: <span className="capitalize font-medium text-white/90">{r.level}</span>
+                                                Risiko: <span className="capitalize font-medium text-white/90">{r.level}</span>
                                             </span>
                                         </div>
                                     </Tooltip>

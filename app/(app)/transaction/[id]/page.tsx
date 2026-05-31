@@ -41,13 +41,13 @@ export default function TransactionDetailPage({ params }: PageProps) {
               className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              Back to Live Feed
+              Kembali ke Live Feed
             </Link>
 
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h1 className="text-xl font-bold tracking-tight">Transaction Details</h1>
+                  <h1 className="text-xl font-bold tracking-tight">Detail Transaksi</h1>
                   {tx.blockedBy && (
                     <Badge
                       variant="outline"
@@ -61,18 +61,18 @@ export default function TransactionDetailPage({ params }: PageProps) {
                       variant="outline"
                       className="text-[10px] font-bold tracking-widest px-2 py-0.5 border-amber-500/40 text-amber-400 bg-amber-500/10"
                     >
-                      ⏸ ON HOLD
+                      DITAHAN
                     </Badge>
                   )}
                 </div>
                 <p className="text-xs text-muted-foreground font-mono">
-                  {tx.txId} • {tx.sender} • {tx.receiver}
+                  {tx.txId} - {tx.sender} - {tx.receiver}
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-[10px] text-muted-foreground tracking-wide uppercase">Time of Interception</p>
+                <p className="text-[10px] text-muted-foreground tracking-wide uppercase">Waktu Dicegat</p>
                 <p className="text-sm font-mono font-medium text-foreground">
-                  {tx.date} • {tx.timeOfInterception}
+                  {tx.date} - {tx.timeOfInterception}
                 </p>
               </div>
             </div>

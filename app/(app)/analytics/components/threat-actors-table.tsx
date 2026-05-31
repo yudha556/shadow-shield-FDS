@@ -17,7 +17,7 @@ type Actor = {
 const actors: Actor[] = [
   {
     address: "0x7a9...1B1",
-    threat: "Darknet Mixer Interaction",
+    threat: "Interaksi Mixer Darknet",
     volume: "$1.24M",
     score: 91,
     action: "Enforce Block",
@@ -26,19 +26,19 @@ const actors: Actor[] = [
   },
   {
     address: "0x3B2...8C4",
-    threat: "Sanctioned IP Origin",
+    threat: "Asal IP Tersanksi",
     volume: "$450k",
     score: 68,
-    action: "Hold Funds",
+    action: "Tahan Dana",
     actionDanger: false,
     dotColor: "#f59e0b",
   },
   {
     address: "0x9F1...3E6",
-    threat: "Velocity Alert (Micro-tx)",
+    threat: "Alert Velocity (Mikro-tx)",
     volume: "$89k",
     score: 35,
-    action: "Hold Funds",
+    action: "Tahan Dana",
     actionDanger: false,
     dotColor: "#22c55e",
   },
@@ -51,11 +51,11 @@ function scoreColor(score: number) {
 }
 
 const COLS = [
-  "ENTITY ADDRESS",
-  "PRIMARY THREAT VECTOR",
-  "VOLUME FLAGGED",
-  "RISK SCORE",
-  "SUGGESTED ACTION",
+  "ALAMAT ENTITAS",
+  "VEKTOR ANCAMAN UTAMA",
+  "VOLUME DITANDAI",
+  "SKOR RISIKO",
+  "AKSI DISARANKAN",
 ];
 
 export function ThreatActorsTable() {
@@ -64,14 +64,14 @@ export function ThreatActorsTable() {
       <CardHeader className="pb-0 pt-5 px-5">
         <div className="flex items-center justify-between">
           <CardTitle className="text-sm font-semibold text-foreground">
-            Top Active Threat Actors
+            Aktor Ancaman Paling Aktif
           </CardTitle>
           <Button
             variant="outline"
             size="sm"
             className="h-7 text-xs border-primary/40 text-primary hover:bg-primary/10 hover:text-primary cursor-pointer"
           >
-            View Full Directory
+            Lihat Direktori Lengkap
           </Button>
         </div>
       </CardHeader>

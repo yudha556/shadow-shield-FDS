@@ -37,7 +37,7 @@ const data = {
         <AudioLinesIcon
         />
       ),
-      plan: "Startup",
+      plan: "Rintisan",
     },
     {
       name: "Evil Corp.",
@@ -45,7 +45,7 @@ const data = {
         <TerminalIcon
         />
       ),
-      plan: "Free",
+      plan: "Gratis",
     },
   ],
   navMain: [
@@ -95,7 +95,7 @@ const data = {
       // ],
     },
     {
-      title: "Alert Queue",
+      title: "Antrean Alert",
       url: "/alert",
       icon: (
         <AlertTriangle
@@ -131,7 +131,7 @@ const data = {
       ),
     },
     {
-      name: "Police Engine",
+      name: "Policy Engine",
       url: "/policy",
       icon: (
         <BrainCircuit

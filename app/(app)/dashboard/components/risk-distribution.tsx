@@ -7,7 +7,7 @@ export function RiskDistribution() {
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-semibold flex items-center gap-2">
           <PieChart className="h-4 w-4 text-muted-foreground" />
-          Risk Distribution
+          Distribusi Risiko
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center justify-center p-6 gap-6">
@@ -21,21 +21,21 @@ export function RiskDistribution() {
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-2xl font-bold text-foreground">14.2</span>
-            <span className="text-[10px] text-muted-foreground">Avg Score</span>
+            <span className="text-[10px] text-muted-foreground">Skor Rata-rata</span>
           </div>
         </div>
 
         <div className="w-full space-y-3 mt-4">
           <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-sm" /> <span className="text-foreground font-medium">Low Risk (0-30)</span></div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-emerald-500 rounded-sm" /> <span className="text-foreground font-medium">Risiko Rendah (0-30)</span></div>
             <span className="font-bold">65%</span>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-500 rounded-sm" /> <span className="text-foreground font-medium">Med Risk (31-70)</span></div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-500 rounded-sm" /> <span className="text-foreground font-medium">Risiko Sedang (31-70)</span></div>
             <span className="font-bold">20%</span>
           </div>
           <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500 rounded-sm" /> <span className="text-foreground font-medium">High Risk (71+)</span></div>
+            <div className="flex items-center gap-2"><div className="w-2 h-2 bg-red-500 rounded-sm" /> <span className="text-foreground font-medium">Risiko Tinggi (71+)</span></div>
             <span className="font-bold">15%</span>
           </div>
         </div>

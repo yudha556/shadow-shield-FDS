@@ -39,7 +39,7 @@ export function AiInsights({ insights }: AiInsightsProps) {
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-semibold flex items-center gap-2">
           <BrainCircuit className="w-4 h-4 text-primary" />
-          AI Anomaly Detection Insights
+          Insight Anomali AI
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0 space-y-3">

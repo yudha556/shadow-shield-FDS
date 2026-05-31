@@ -9,7 +9,7 @@ export function AIRecommendations() {
           <Sparkles className="h-4 w-4 text-purple-400" />
           AI Recommendations
         </h2>
-        <p className="text-xs text-muted-foreground mt-1">Suggested policy optimizations.</p>
+        <p className="text-xs text-muted-foreground mt-1">Rekomendasi optimasi policy.</p>
       </div>
 
       <div className="relative overflow-hidden rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-transparent p-5">
@@ -17,18 +17,18 @@ export function AIRecommendations() {
         
         <TrendingUp className="h-5 w-5 text-purple-400 mb-3" />
         
-        <h3 className="text-sm font-bold text-foreground mb-1.5">Emerging Anomaly Detected</h3>
+        <h3 className="text-sm font-bold text-foreground mb-1.5">Anomali Baru Terdeteksi</h3>
         <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-          We detected a 34% increase in fraudulent micro-transactions originating from Southeast Asia VPNs.
+          Sistem mendeteksi kenaikan 34% transaksi mikro fraud yang berasal dari VPN Asia Tenggara.
         </p>
 
         <div className="bg-background/80 border border-purple-500/20 rounded-md p-3 mb-4 font-mono text-[10px] text-purple-200">
-          <span className="text-muted-foreground">Suggested Condition:</span><br />
+          <span className="text-muted-foreground">Kondisi yang disarankan:</span><br />
           VPN = True AND Region = SEA AND Amount &lt; $50
         </div>
 
         <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold">
-          Review & Implement Rule
+          Tinjau & Terapkan Rule
         </Button>
       </div>
     </div>

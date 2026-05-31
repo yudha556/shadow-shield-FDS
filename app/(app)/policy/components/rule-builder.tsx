@@ -11,12 +11,12 @@ export function RuleBuilder() {
         <div className="space-y-1">
           <CardTitle className="text-base font-semibold flex items-center gap-2">
             <Gavel className="h-4 w-4 text-muted-foreground" />
-            Rule Builder
+            Penyusun Rule
           </CardTitle>
-          <p className="text-xs text-muted-foreground">Drafting a new policy rule.</p>
+          <p className="text-xs text-muted-foreground">Menyusun rule policy baru.</p>
         </div>
         <Button variant="outline" size="sm" className="h-8 text-xs">
-          Discard Draft
+          Buang Draft
         </Button>
       </CardHeader>
       
@@ -24,15 +24,15 @@ export function RuleBuilder() {
         {/* Rule Name */}
         <div className="space-y-2">
           <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            Rule Name
+            Nama Rule
           </label>
-          <Input defaultValue="High Velocity Dormant Account Spikes" className="bg-background" />
+          <Input defaultValue="Lonjakan Kecepatan Akun Dormant" className="bg-background" />
         </div>
 
         {/* Conditions */}
         <div className="space-y-4 bg-background/50 p-4 rounded-lg border border-border/40">
           <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            If all of the following conditions are met:
+            Jika semua kondisi berikut terpenuhi:
           </label>
           
           <div className="space-y-3">
@@ -41,19 +41,19 @@ export function RuleBuilder() {
               <Select defaultValue="status">
                 <SelectTrigger className="w-[180px] bg-background"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="status">Account Status</SelectItem>
+                  <SelectItem value="status">Status Akun</SelectItem>
                 </SelectContent>
               </Select>
               <Select defaultValue="equals">
                 <SelectTrigger className="w-[120px] bg-background"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="equals">Equals</SelectItem>
+                  <SelectItem value="equals">Sama Dengan</SelectItem>
                 </SelectContent>
               </Select>
               <Select defaultValue="dormant">
                 <SelectTrigger className="flex-1 bg-background"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="dormant">Dormant (&gt; 90 days)</SelectItem>
+                  <SelectItem value="dormant">Dormant (&gt; 90 hari)</SelectItem>
                 </SelectContent>
               </Select>
               <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-destructive">
@@ -68,13 +68,13 @@ export function RuleBuilder() {
               <Select defaultValue="volume">
                 <SelectTrigger className="w-[180px] bg-background"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="volume">Transaction Volume (1h)</SelectItem>
+                  <SelectItem value="volume">Volume Transaksi (1 jam)</SelectItem>
                 </SelectContent>
               </Select>
               <Select defaultValue="greater">
                 <SelectTrigger className="w-[120px] bg-background"><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="greater">Greater Than</SelectItem>
+                  <SelectItem value="greater">Lebih Besar Dari</SelectItem>
                 </SelectContent>
               </Select>
               <Input defaultValue="5" className="flex-1 bg-background" />
@@ -86,27 +86,27 @@ export function RuleBuilder() {
 
           <Button variant="secondary" size="sm" className="mt-2 text-xs h-8">
             <Plus className="mr-2 h-3 w-3" />
-            Add Condition
+            Tambah Kondisi
           </Button>
         </div>
 
         {/* Action Trigger */}
         <div className="flex items-center gap-4 pt-2">
-          <span className="text-sm font-medium">Then trigger:</span>
+          <span className="text-sm font-medium">Maka jalankan:</span>
           <Select defaultValue="hold">
             <SelectTrigger className="w-[180px]"><SelectValue /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="hold">Hold Transaction</SelectItem>
+              <SelectItem value="hold">Tahan Transaksi</SelectItem>
             </SelectContent>
           </Select>
           <Select defaultValue="high">
             <SelectTrigger className="w-[140px]"><SelectValue /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="high">Priority: High</SelectItem>
+              <SelectItem value="high">Prioritas: Tinggi</SelectItem>
             </SelectContent>
           </Select>
           <div className="flex-1" />
-          <Button className="font-semibold">Save Rule</Button>
+          <Button className="font-semibold">Simpan Rule</Button>
         </div>
       </CardContent>
     </Card>

@@ -22,7 +22,7 @@ export function IncidentSelector({ incidents, activeId, onChange }: IncidentSele
   return (
     <div className="flex items-center gap-3">
       <h1 className="text-xl font-bold text-foreground tracking-tight whitespace-nowrap">
-        Transaction Trace
+        Jejak Transaksi
       </h1>
       <Select value={activeId} onValueChange={onChange}>
         <SelectTrigger className="h-6 w-auto border-primary/40 bg-primary/10 text-primary text-xs font-medium px-2 gap-1.5 rounded-md focus:ring-0 focus:ring-offset-0">

@@ -31,7 +31,7 @@ export default function TraceGraphPage() {
               onClick={() => setPanelOpen(true)}
               className="text-xs text-primary border border-primary/30 bg-primary/10 px-3 py-1 rounded-md hover:bg-primary/20 transition-colors"
             >
-              Show Intelligence
+              Tampilkan Intel
             </button>
           )}
         </div>

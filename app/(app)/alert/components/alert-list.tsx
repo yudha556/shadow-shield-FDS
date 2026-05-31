@@ -25,7 +25,7 @@ export function AlertList({ alerts, activeFilter }: AlertListProps) {
   if (filtered.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <p className="text-muted-foreground text-sm">No alerts found for this filter.</p>
+        <p className="text-muted-foreground text-sm">Tidak ada alert untuk filter ini.</p>
       </div>
     );
   }

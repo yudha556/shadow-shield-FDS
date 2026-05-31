@@ -13,30 +13,30 @@ type StatCardProps = {
 
 const stats: StatCardProps[] = [
   {
-    label: "Fraud Rate",
+    label: "Rasio Fraud",
     value: "0.84%",
-    change: "+0.12% vs last 7d",
+    change: "+0.12% vs 7 hari lalu",
     positive: false,
     icon: AlertTriangle,
   },
   {
-    label: "Detection Accuracy",
+    label: "Akurasi Deteksi",
     value: "99.2%",
-    change: "-0.18% vs last 7d",
+    change: "-0.18% vs 7 hari lalu",
     positive: false,
     icon: CheckCircle,
   },
   {
-    label: "False Positives",
+    label: "False Positive",
     value: "1.20%",
-    change: "-0.45% vs last 7d",
+    change: "-0.45% vs 7 hari lalu",
     positive: true,
     icon: Eye,
   },
   {
-    label: "Flagged Volume",
+    label: "Volume Ditandai",
     value: "$14.2M",
-    change: "+12.4% vs last 7d",
+    change: "+12.4% vs 7 hari lalu",
     positive: false,
     icon: BarChart2,
   },

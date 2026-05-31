@@ -27,7 +27,7 @@ export function BehavioralBiometrics({ items }: BehavioralBiometricsProps) {
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-semibold flex items-center gap-2 text-primary">
           <Fingerprint className="w-4 h-4 " />
-          Behavioral Biometrics
+          Biometrics Perilaku
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0 space-y-4">

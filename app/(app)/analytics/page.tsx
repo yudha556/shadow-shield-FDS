@@ -25,10 +25,10 @@ export default function AnalyticPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold text-foreground tracking-tight">
-            Risk Analytics
+            Analitik Risiko
           </h1>
           <p className="text-xs text-muted-foreground mt-0.5">
-            Real-time fraud intelligence overview
+            Ringkasan intel fraud real-time
           </p>
         </div>
 

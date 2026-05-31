@@ -23,7 +23,7 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
     <div className="flex flex-col h-full bg-sidebar border-l border-border/60 w-[280px] shrink-0 overflow-hidden">
 
       <div className="flex items-center justify-between px-4 pt-4 pb-3 shrink-0">
-        <h2 className="text-sm font-semibold text-foreground">Wallet Intelligence</h2>
+        <h2 className="text-sm font-semibold text-foreground">Intel Wallet</h2>
         <button
           onClick={onClose}
           className="text-muted-foreground hover:text-foreground transition-colors"
@@ -39,7 +39,7 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
         <span className="text-sm font-bold text-foreground tracking-wide">{data.address}</span>
         <Badge className="bg-red-500/15 text-red-400 border border-red-500/30 text-xs font-semibold gap-1 hover:bg-red-500/15">
           <AlertCircle className="w-3 h-3" />
-          Critical Risk ({data.riskScore}/100)
+          Risiko Kritis ({data.riskScore}/100)
         </Badge>
       </div>
 
@@ -47,14 +47,14 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
 
       <div className="px-4 pt-3 pb-3 shrink-0">
         <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-          Entity Details
+          Detail Entitas
         </p>
         <div className="grid grid-cols-2 gap-1.5">
           {[
             { label: "Total Volume", value: data.entityDetails.totalVolume },
-            { label: "Tx Count", value: data.entityDetails.txCount.toString() },
-            { label: "First Seen", value: data.entityDetails.firstSeen },
-            { label: "Last Active", value: data.entityDetails.lastActive },
+            { label: "Jumlah Tx", value: data.entityDetails.txCount.toString() },
+            { label: "Pertama Muncul", value: data.entityDetails.firstSeen },
+            { label: "Terakhir Aktif", value: data.entityDetails.lastActive },
           ].map((item) => (
             <div key={item.label} className="bg-card rounded-md px-3 py-2 border border-border/40">
               <p className="text-[9px] text-muted-foreground uppercase tracking-wide mb-0.5">
@@ -70,7 +70,7 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
 
       <div className="px-4 pt-3 pb-3 shrink-0">
         <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-          Risk Factors
+          Faktor Risiko
         </p>
         <div className="flex flex-col gap-2">
           {data.riskFactors.map((factor: RiskFactor, idx: number) => (
@@ -86,7 +86,7 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
 
       <div className="px-4 pt-3 flex flex-col flex-1 min-h-0">
         <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2 shrink-0">
-          Recent Transactions
+          Transaksi Terbaru
         </p>
         <div className="flex flex-col gap-2 flex-1 justify-evenly">
           {data.recentTxs.map((tx) => (
@@ -126,14 +126,14 @@ export function WalletIntelPanel({ data, onClose }: WalletIntelPanelProps) {
       <div className="flex flex-col gap-2 px-4 py-4 border-t border-border/50 shrink-0">
         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 gap-2 text-xs font-semibold h-9">
           <FileText className="w-3.5 h-3.5" />
-          Generate SAR Report
+          Buat Laporan SAR
         </Button>
         <Button
           variant="outline"
           className="w-full border-red-500/40 text-red-400 hover:bg-red-500/10 hover:text-red-300 gap-2 text-xs font-semibold h-9"
         >
           <ShieldBan className="w-3.5 h-3.5" />
-          Enforce Global Blacklist
+          Masukkan Blacklist Global
         </Button>
       </div>
     </div>

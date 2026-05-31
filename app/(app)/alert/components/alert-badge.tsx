@@ -10,19 +10,19 @@ interface AlertBadgeProps {
 
 const riskConfig: Record<RiskLevel, { label: string; className: string }> = {
   critical: {
-    label: "Critical Risk",
+    label: "Risiko Kritis",
     className: "bg-red-500/20 text-red-400 border-red-500/30 hover:bg-red-500/20",
   },
   warning: {
-    label: "Warning",
+    label: "Peringatan",
     className: "bg-orange-500/20 text-orange-400 border-orange-500/30 hover:bg-orange-500/20",
   },
   medium: {
-    label: "Medium Risk",
+    label: "Risiko Sedang",
     className: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30 hover:bg-yellow-500/20",
   },
   low: {
-    label: "Low Risk",
+    label: "Risiko Rendah",
     className: "bg-blue-500/20 text-blue-400 border-blue-500/30 hover:bg-blue-500/20",
   },
 };

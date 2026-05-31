@@ -14,12 +14,12 @@ export default function PolicyEnginePage() {
           Policy Engine
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
-          Configure and simulate automated fraud detection rules.
+          Atur dan simulasikan aturan deteksi fraud otomatis.
         </p>
       </div>
       <Button className="font-semibold">
         <Plus className="mr-2 h-4 w-4" />
-        Create New Rule
+        Buat Rule Baru
       </Button>
     </div>
       

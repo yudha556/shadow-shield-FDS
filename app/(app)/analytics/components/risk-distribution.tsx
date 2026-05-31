@@ -3,9 +3,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const segments = [
-    { label: "High Risk (Flagged)", pct: 15, color: "#ef4444" },
-    { label: "Medium Risk (Review)", pct: 25, color: "#f59e0b" },
-    { label: "Low Risk (Approved)", pct: 60, color: "#22c55e" },
+    { label: "Risiko Tinggi (Ditandai)", pct: 15, color: "#ef4444" },
+    { label: "Risiko Sedang (Review)", pct: 25, color: "#f59e0b" },
+    { label: "Risiko Rendah (Disetujui)", pct: 60, color: "#22c55e" },
 ];
 
 const TOTAL = 8421;
@@ -77,7 +77,7 @@ function RiskDonutSVG() {
                     {TOTAL.toLocaleString()}
                 </span>
                 <span className="text-[10px] text-muted-foreground mt-1 tracking-wide">
-                    Total Alerts
+                    Total Alert
                 </span>
             </div>
         </div>
@@ -89,7 +89,7 @@ export function RiskDistribution() {
         <Card className="bg-card border-border/60">
             <CardHeader className="pb-2 pt-5 px-5">
                 <CardTitle className="text-sm font-semibold text-foreground">
-                    Risk Distribution
+                    Distribusi Risiko
                 </CardTitle>
             </CardHeader>
             <CardContent className="px-5 pb-5">

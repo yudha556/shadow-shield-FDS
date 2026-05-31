@@ -54,9 +54,15 @@ function getStatusClass(status: Status): string {
 }
 
 function getActionLabel(status: Status): string {
-  if (status === "Blocked") return "Review"
-  if (status === "Held") return "Verify"
-  return "View"
+  if (status === "Blocked") return "Tinjau"
+  if (status === "Held") return "Verifikasi"
+  return "Lihat"
+}
+
+function getStatusLabel(status: Status): string {
+  if (status === "Blocked") return "Diblokir"
+  if (status === "Held") return "Ditahan"
+  return "Disetujui"
 }
 
 function getRowAccent(status: Status): string {
@@ -68,7 +74,7 @@ function getRowAccent(status: Status): string {
 const columns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "time",
-    header: "TIME",
+    header: "WAKTU",
     cell: ({ row }) => (
       <span className="font-mono text-xs text-muted-foreground tabular-nums">
         {row.getValue("time")}
@@ -77,7 +83,7 @@ const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "txId",
-    header: "TRANSACTION ID",
+    header: "ID TRANSAKSI",
     cell: ({ row }) => (
       <span className="font-mono text-xs font-medium text-foreground">
         {row.getValue("txId")}
@@ -86,7 +92,7 @@ const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "sender",
-    header: "SENDER",
+    header: "PENGIRIM",
     cell: ({ row }) => (
       <span className="font-mono text-xs text-muted-foreground">
         {row.getValue("sender")}
@@ -95,7 +101,7 @@ const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "receiver",
-    header: "RECEIVER",
+    header: "PENERIMA",
     cell: ({ row }) => (
       <span className="font-mono text-xs text-muted-foreground">
         {row.getValue("receiver")}
@@ -104,19 +110,19 @@ const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "amount",
-    header: "AMOUNT",
+    header: "NOMINAL",
     cell: ({ row }) => {
       const amount = row.getValue("amount") as number
       return (
         <span className="font-mono text-sm font-semibold text-foreground">
-          ${amount.toLocaleString("en-US", { minimumFractionDigits: 2 })}
+          Rp{amount.toLocaleString("id-ID", { maximumFractionDigits: 0 })}
         </span>
       )
     },
   },
   {
     accessorKey: "riskScore",
-    header: "RISK SCORE",
+    header: "SKOR RISIKO",
     cell: ({ row }) => {
       const score = row.getValue("riskScore") as number
       return (
@@ -144,18 +150,18 @@ const columns: ColumnDef<Transaction>[] = [
           variant="outline"
           className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${getStatusClass(status)}`}
         >
-          {status}
+          {getStatusLabel(status)}
         </Badge>
       )
     },
   },
   {
     id: "action",
-    header: "ACTION",
+    header: "AKSI",
     cell: ({ row }) => {
       const { status, id } = row.original
       const label = getActionLabel(status)
-      const isReview = label === "Review"
+      const isReview = status === "Blocked"
       return (
         <Button
           size="sm"
@@ -208,7 +214,7 @@ export function LiveFeedTable() {
       <div className="flex items-center gap-2 flex-wrap">
         <div className="relative flex-1 min-w-[200px] max-w-xs">
           <Input
-            placeholder="Search TX hash, wallet..."
+            placeholder="Cari ID transaksi, rekening, wallet..."
             value={(table.getColumn("txId")?.getFilterValue() as string) ?? ""}
             onChange={(e) => table.getColumn("txId")?.setFilterValue(e.target.value)}
             className="pl-9 h-9 text-sm bg-background border-border"
@@ -226,14 +232,14 @@ export function LiveFeedTable() {
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-border">
               <ShieldAlert className="w-3.5 h-3.5" />
-              Risk Level
+              Level Risiko
               <ChevronDown className="w-3 h-3 opacity-60" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-40">
-            <DropdownMenuCheckboxItem checked>High (≥75)</DropdownMenuCheckboxItem>
-            <DropdownMenuCheckboxItem checked>Medium (40–74)</DropdownMenuCheckboxItem>
-            <DropdownMenuCheckboxItem checked>Low (&lt;40)</DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem checked>Tinggi (&gt;=75)</DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem checked>Sedang (40-74)</DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem checked>Rendah (&lt;40)</DropdownMenuCheckboxItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -257,7 +263,7 @@ export function LiveFeedTable() {
                 checked={statusFilter.includes(s)}
                 onCheckedChange={() => toggleStatus(s)}
               >
-                {s}
+                {getStatusLabel(s)}
               </DropdownMenuCheckboxItem>
             ))}
           </DropdownMenuContent>
@@ -265,7 +271,7 @@ export function LiveFeedTable() {
 
         <Button variant="outline" size="sm" className="h-9 gap-1.5 text-sm border-border">
           <CalendarDays className="w-3.5 h-3.5" />
-          Today
+          Hari Ini
           <ChevronDown className="w-3 h-3 opacity-60" />
         </Button>
 
@@ -273,7 +279,7 @@ export function LiveFeedTable() {
 
         <Button size="sm" className="h-9 gap-1.5 text-sm">
           <Download className="w-3.5 h-3.5" />
-          Export CSV
+          Ekspor CSV
         </Button>
       </div>
 
@@ -312,7 +318,7 @@ export function LiveFeedTable() {
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center text-muted-foreground text-sm">
-                  No transactions found.
+                  Tidak ada transaksi yang cocok.
                 </TableCell>
               </TableRow>
             )}
@@ -322,22 +328,22 @@ export function LiveFeedTable() {
 
       <div className="flex items-center justify-between px-1">
         <p className="text-sm text-muted-foreground">
-          Showing{" "}
+          Menampilkan{" "}
           <span className="font-semibold text-foreground">
             {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}
           </span>{" "}
-          to{" "}
+          sampai{" "}
           <span className="font-semibold text-foreground">
             {Math.min(
               (table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize,
               table.getFilteredRowModel().rows.length
             )}
           </span>{" "}
-          of{" "}
+          dari{" "}
           <span className="font-semibold text-foreground">
             {table.getFilteredRowModel().rows.length}
           </span>{" "}
-          entries
+          data
         </p>
         <div className="flex gap-2">
           <Button
@@ -347,7 +353,7 @@ export function LiveFeedTable() {
             disabled={!table.getCanPreviousPage()}
             className="h-8 px-4 text-sm border-border"
           >
-            Previous
+            Sebelumnya
           </Button>
           <Button
             variant="outline"
@@ -356,7 +362,7 @@ export function LiveFeedTable() {
             disabled={!table.getCanNextPage()}
             className="h-8 px-4 text-sm border-border"
           >
-            Next
+            Berikutnya
           </Button>
         </div>
       </div>

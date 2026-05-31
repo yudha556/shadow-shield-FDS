@@ -6,17 +6,17 @@ interface RiskScoreCardProps {
 }
 
 function getRiskLabel(score: number) {
-  if (score >= 80) return "Critical Risk Assessment"
-  if (score >= 60) return "High Risk Assessment"
-  if (score >= 40) return "Medium Risk Assessment"
-  return "Low Risk Assessment"
+  if (score >= 80) return "Risiko Kritis"
+  if (score >= 60) return "Risiko Tinggi"
+  if (score >= 40) return "Risiko Sedang"
+  return "Risiko Rendah"
 }
 
 function getRiskSubtext(score: number) {
-  if (score >= 80) return "Immediate review required. High probability of fraudulent activity."
-  if (score >= 60) return "Manual review recommended. Several anomalies detected."
-  if (score >= 40) return "Elevated risk detected. Monitor closely."
-  return "No significant anomalies detected."
+  if (score >= 80) return "Perlu ditindak sekarang. Indikasi fraud sangat kuat."
+  if (score >= 60) return "Sebaiknya dicek analis. Ada beberapa anomali."
+  if (score >= 40) return "Risiko mulai naik. Pantau dengan ketat."
+  return "Belum ada anomali besar yang kelihatan."
 }
 
 function getRiskColor(score: number) {

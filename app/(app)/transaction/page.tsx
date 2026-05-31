@@ -6,7 +6,7 @@ export default function Transaction() {
         <div className="w-full h-full mb-[100px] flex flex-col gap-8">
             <div className="flex flex-col gap-2">
                 <h1 className="text-2xl font-bold">Live Transaction Feed</h1>
-                <p className="text-sm text-gray-500">Real-Time network monitoring and automated threat intercept</p>
+                <p className="text-sm text-gray-500">Pantauan jaringan real-time dan pencegahan ancaman otomatis</p>
             </div>
 
             <Card className="p-4 bg-card">

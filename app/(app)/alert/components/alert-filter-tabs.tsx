@@ -8,10 +8,10 @@ type FilterTab = {
 };
 
 const tabs: FilterTab[] = [
-  { label: "All Alerts", value: "all", count: 24 },
-  { label: "Critical", value: "critical", count: 3 },
-  { label: "Under Review", value: "review", count: 8 },
-  { label: "Resolved", value: "resolved" },
+  { label: "Semua Alert", value: "all", count: 24 },
+  { label: "Kritis", value: "critical", count: 3 },
+  { label: "Perlu Review", value: "review", count: 8 },
+  { label: "Selesai", value: "resolved" },
 ];
 
 interface AlertFilterTabsProps {

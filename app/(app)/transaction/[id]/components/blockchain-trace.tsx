@@ -57,7 +57,7 @@ export function BlockchainTrace({ nodes }: BlockchainTraceProps) {
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-semibold flex items-center gap-2 text-primary">
           <GitFork className="w-4 h-4 " />
-          Blockchain Trace Analysis
+          Analisis Jejak Dana
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">

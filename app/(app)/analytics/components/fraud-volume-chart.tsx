@@ -43,7 +43,7 @@ const CustomTooltip = ({
                 <p className="text-muted-foreground">{String(label)}</p>
 
                 <p className="text-foreground font-semibold">
-                    {payload?.[0]?.value ?? 0} alerts
+                    {payload?.[0]?.value ?? 0} alert
                 </p>
             </div>
         );
@@ -57,7 +57,7 @@ export function FraudVolumeChart() {
             <CardHeader className="pb-2 pt-5 px-5">
                 <div className="flex items-center justify-between">
                     <CardTitle className="text-sm font-semibold text-foreground">
-                        Fraud Detection Volume
+                        Volume Deteksi Fraud
                     </CardTitle>
                     <Button
                         variant="outline"
@@ -65,7 +65,7 @@ export function FraudVolumeChart() {
                         className="h-7 text-xs gap-1.5 border-border/60 cursor-pointer"
                     >
                         <Download className="w-3 h-3" />
-                        Export
+                        Ekspor
                     </Button>
                 </div>
             </CardHeader>
