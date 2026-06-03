@@ -72,7 +72,7 @@ export function ThreatHeatmap() {
                 <CardContent className="px-5 pb-5">
                     <div 
                         className="relative w-full h-[300px] rounded-lg overflow-hidden border border-border/30 shadow-inner"
-                        style={{ backgroundColor: "#242424" }} 
+                        style={{ backgroundColor: "#1f2933" }} 
                     >                    
                         <LeafletMapContainer
                             center={[30, 0]}
@@ -105,7 +105,8 @@ export function ThreatHeatmap() {
                             style={{ height: "100%", width: "100%", background: 'transparent' }} 
                         >
                             <LeafletTileLayer 
-                                url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" 
+                                url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+                                attribution="Tiles &copy; Esri"
                                 noWrap={true}
                             />
 
@@ -140,7 +141,7 @@ export function ThreatHeatmap() {
                             ))}
                         </LeafletMapContainer>
 
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#242424]/90 to-transparent" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#1f2933]/80 to-transparent" />
                     </div>
                 </CardContent>
             </Card>
