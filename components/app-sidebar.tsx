@@ -13,7 +13,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { GalleryVerticalEndIcon, AudioLinesIcon, TerminalIcon, TerminalSquareIcon, BotIcon, BookOpenIcon, Settings2Icon, FrameIcon, PieChartIcon, MapIcon, LucideLayoutDashboard, Activity, AlertTriangle, GitFork, BrainCircuit, ChartPie, ShieldAlert } from "lucide-react"
+import { Activity, AlertTriangle, GitFork, BrainCircuit, ChartPie, ShieldCheck, LucideLayoutDashboard } from "lucide-react"
 
 // This is sample data.
 const data = {
@@ -26,7 +26,8 @@ const data = {
     {
       name: "ShadowShield",
       logo: (
-        <ShieldAlert
+        <ShieldCheck
+          className="size-4"
         />
       ),
       // plan: "Enterprise",
@@ -34,7 +35,8 @@ const data = {
     {
       name: "ShadowShield",
       logo: (
-        <AudioLinesIcon
+        <ShieldCheck
+          className="size-4"
         />
       ),
       plan: "Rintisan",
@@ -42,7 +44,8 @@ const data = {
     {
       name: "Evil Corp.",
       logo: (
-        <TerminalIcon
+        <ShieldCheck
+          className="size-4"
         />
       ),
       plan: "Gratis",
